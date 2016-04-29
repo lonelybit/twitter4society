@@ -13,9 +13,11 @@ public class TwitterStreamListener {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello");
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("keys");
 
+		System.out.println("Total Argumants - " + resourceBundle.keySet().size());
+		for(String arg : resourceBundle.keySet())
+			System.out.println(arg);
 	}
 
 }
