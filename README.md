@@ -12,3 +12,7 @@ Comprised of -<br/>
 <li>4. Feedback Provider - to keep concerned people always updated with current status</li>
 <li>5. Console - Overall dashboard of whole functionlities, history records etc.</li>
 </ul>
+
+<br/><br/>
+Component Diagram - 
+Refer to file - <a href="https://github.com/lonelybit/twitter4society/blob/master/Techngage%20Components.pdf">Component Diagram</a> here!
