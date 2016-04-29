@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>TwitterStreamListener</servlet-name>
+  	<display-name>TwitterStreamListener</display-name>
+  	<description></description>
+  	<servlet-class>com.lonelybit.citizen.services.servlet.TwitterStreamListener</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TwitterStreamListener</servlet-name>
+  	<url-pattern>/TwitterStreamListener</url-pattern>
+  </servlet-mapping>
 </web-app>
