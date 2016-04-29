@@ -56,7 +56,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
         <configuration>
-          <mainClass>com.twitter.hbc.example.SampleStreamExample</mainClass>
+          <mainClass>com.lonelybit.citizen.services.TwitterStreamListener</mainClass>
           <arguments>
             <argument>${consumer.key}</argument>
             <argument>${consumer.secret}</argument>
