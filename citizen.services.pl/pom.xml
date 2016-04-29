@@ -31,6 +31,11 @@
     </dependency>
     <dependency>
       <groupId>com.twitter</groupId>
+      <artifactId>hbc-core</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.twitter</groupId>
       <artifactId>hbc-twitter4j</artifactId>
       <version>2.2.0</version>
     </dependency>
@@ -39,9 +44,34 @@
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.2</version>
     </dependency>
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>servlet-api</artifactId>
+    	<version>2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.twitter</groupId>
+      <artifactId>joauth</artifactId>
+      <version>6.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>1.3.9</version>
+    </dependency>
   </dependencies>
   <build>
-    <finalName>citizen.services.pl</finalName>
+    <finalName>citizen-services_pl_2</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -55,17 +85,25 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
-        <configuration>
-          <mainClass>com.lonelybit.citizen.services.TwitterStreamListener</mainClass>
-          <arguments>
-            <argument>${consumer.key}</argument>
-            <argument>${consumer.secret}</argument>
-            <argument>${access.token}</argument>
-            <argument>${access.token.secret}</argument>
-          </arguments>
-        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+	          <mainClass>com.lonelybit.citizen.services.TwitterStreamListener</mainClass>
+	          <executable>java</executable>
+	          <arguments>
+	            <argument>${consumer.key}</argument>
+	            <argument>${consumer.secret}</argument>
+	            <argument>${access.token}</argument>
+	            <argument>${access.token.secret}</argument>
+	          </arguments>
+	        </configuration>
+          </execution>
+        </executions>
       </plugin> -->
-      <plugin>
+      <!-- <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-jar-plugin</artifactId>
 			<configuration>
@@ -75,7 +113,16 @@
 					</manifest>
 				</archive>
 			</configuration>
-		</plugin>
+		</plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
     </plugins>
   </build>
 </project>
